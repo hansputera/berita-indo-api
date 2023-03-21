@@ -218,14 +218,14 @@ router.get("/", (_, res: Response) => {
         listType: [
           "internasional",
           "pemilu",
-          "infografis",
           "foto",
-          "jabodetabek",
-          "blak-blakan",
           "berita",
-          "pro-kontra",
+          "news",
+          "telecommunication",
+          "tips-trick",
         ],
-        example: "https://berita-indo-api.vercel.app/v1/detik/berita",
+        zone: ["news", "inet"],
+        example: "https://berita-indo-api.vercel.app/v1/detik/inet/tips-trick",
       },
     },
     author: "Satya Wikananda",
@@ -256,8 +256,8 @@ router.get("/v1/vice/:page?", BeritaIndo.ViceNews.getAllNews)
 router.get("/v1/suara/", BeritaIndo.SuaraNews.getAllNews)
 router.get("/v1/suara/:type", BeritaIndo.SuaraNews.getNews)
 router.get("/v1/voa/", BeritaIndo.VOAIndonesia.getAllNews)
-router.get("/v1/detik/", BeritaIndo.DetikNews.getAllNews)
-router.get("/v1/detik/:type", BeritaIndo.DetikNews.getNews)
+router.get("/v1/detik/:zone/:type", BeritaIndo.DetikNews.getNews)
+router.get("/v1/detik/:zone?", BeritaIndo.DetikNews.getAllNews)
 
 router.all("*", BeritaIndo.notFound)
 

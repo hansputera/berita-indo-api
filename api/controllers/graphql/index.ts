@@ -129,18 +129,17 @@ const listsApi: ListsApi[] = [
   {
     label: "Detik News",
     all: "https://berita-indo-api.vercel.app/v1/detik",
-    type: "https://berita-indo-api.vercel.app/v1/detik/:type",
+    type: "https://berita-indo-api.vercel.app/v1/detik/:zone/:type",
     listType: [
       "internasional",
       "pemilu",
-      "infografis",
       "foto",
-      "jabodetabek",
-      "blak-blakan",
       "berita",
-      "pro-kontra",
+      "telecommunication",
+      "tips-tricks",
+      "news",
     ],
-    example: "https://berita-indo-api.vercel.app/v1/detik/berita"
+    example: "https://berita-indo-api.vercel.app/v1/detik/inet/tips-tricks"
   }
 ]
 

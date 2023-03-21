@@ -168,12 +168,13 @@ export type TypeSuara =
 export type TypeDetik =
   | "internasional"
   | "pemilu"
-  | "infografis"
-  | "jabodetabek"
-  | "blak-blakan"
-  | "pro-kontra"
   | "foto"
   | "berita"
+  | "telecommunication"
+  | "tips-tricks"
+  | "news"
+
+export type ZoneDetik = "news" | "inet"
 
 export interface DataResponse {
   code: number

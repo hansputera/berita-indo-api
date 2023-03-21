@@ -1,12 +1,13 @@
 import { Request, Response } from "express"
 import { parserRss } from "../../../utils/parser"
 import { replaceQueryParams } from "../../../utils/replaceQueryParams"
-import { DataResponse, TypeDetik } from "../../../types/common"
+import { DataResponse, TypeDetik, ZoneDetik } from "../../../types/common"
 import { useSearch } from "../../../utils/useSearch"
 import { RSS_DETIK_NEWS } from "../../../const"
 
 interface Params {
   type?: TypeDetik
+  zone?: ZoneDetik
 }
 
 interface Title {
@@ -16,9 +17,10 @@ interface Title {
 class DetikNews {
   static async getNews(req: Request, res: Response) {
     try {
-      const { type }: Partial<Params> = req.params
+      const { type, zone }: Partial<Params> = req.params
       const { title }: Partial<Title> = req.query
       let url = RSS_DETIK_NEWS.replace("{type}", type)
+        .replace("{zone}", zone)
       const result = await parserRss(url)
       const data = result.items.map((items) => {
         const image = replaceQueryParams(items.enclosure.url, "q", "100")
@@ -66,7 +68,10 @@ class DetikNews {
 
   static async getAllNews(req: Request, res: Response) {
     try {
-      const url = RSS_DETIK_NEWS.replace("/{type}", "")
+      const { zone }: Partial<Params> = req.params;
+      const url = RSS_DETIK_NEWS
+        .replace("/{type}", "")
+        .replace("{zone}", zone || "news")
       const { title }: Partial<Title> = req.query
       const result = await parserRss(url)
       const data = result.items.map((items) => {
