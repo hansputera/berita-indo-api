@@ -165,6 +165,16 @@ export type TypeSuara =
   | "wawancara"
   | "pressrelease"
 
+export type TypeDetik =
+  | "internasional"
+  | "pemilu"
+  | "infografis"
+  | "jabodetabek"
+  | "blak-blakan"
+  | "pro-kontra"
+  | "foto"
+  | "berita"
+
 export interface DataResponse {
   code: number
   status?: string

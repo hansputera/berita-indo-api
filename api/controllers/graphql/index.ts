@@ -126,6 +126,22 @@ const listsApi: ListsApi[] = [
     label: "VOA Indonesia",
     all: "https://berita-indo-api.vercel.app/v1/voaindonesia",
   },
+  {
+    label: "Detik News",
+    all: "https://berita-indo-api.vercel.app/v1/detik",
+    type: "https://berita-indo-api.vercel.app/v1/detik/:type",
+    listType: [
+      "internasional",
+      "pemilu",
+      "infografis",
+      "foto",
+      "jabodetabek",
+      "blak-blakan",
+      "berita",
+      "pro-kontra",
+    ],
+    example: "https://berita-indo-api.vercel.app/v1/detik/berita"
+  }
 ]
 
 export const resolvers = {
