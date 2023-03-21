@@ -1,7 +1,6 @@
-import { gql } from "apollo-server-express"
 import { ListsApi } from "../../../types/common"
 
-export const typeDefs = gql`
+export const typeDefs = `#graphql
   type listsApi {
     label: String
     all: String

@@ -24,22 +24,22 @@
   "license": "MIT",
   "devDependencies": {
     "@satyawikananda/prettier-config": "^0.0.3",
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "@types/node": "^14.18.12",
-    "@vercel/node": "^1.13.0",
-    "fuse.js": "^6.5.3",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^14.18.40",
+    "@vercel/node": "^1.15.4",
+    "fuse.js": "^6.6.2",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.4",
-    "prettier": "^2.5.1",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.6.2"
+    "lint-staged": "^12.5.0",
+    "prettier": "^2.8.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "apollo-server-express": "^2.25.3",
+    "@apollo/server": "^4.5.0",
     "cors": "^2.8.5",
-    "express": "^4.17.3",
-    "graphql": "^15.8.0",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
     "rss-parser": "^3.12.0"
   }
 }
